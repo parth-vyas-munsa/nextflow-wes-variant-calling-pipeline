@@ -35,7 +35,7 @@ process FILTER_INDEL{
 
  tag "$id"
 
-    publishDir "${params.variants_filter_dir}/SNP", mode: 'copy'
+    publishDir "${params.variants_filter_dir}/INDEL", mode: 'copy'
 
 
 
