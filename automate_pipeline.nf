@@ -92,9 +92,17 @@ PREFETCH(ch_id)
 SPLIT(PREFETCH.out.sra)
 QUALITY(SPLIT.out)
 FASTP(SPLIT.out)
+
+ch_fastp_reports = FASTP.out.trimmed
+    .flatMap { id, r1, r2, html, json ->
+        [json]
+    }
+
 ch_multiqc = QUALITY.out.zip
-    .mix(FASTP.out)
+    .mix(ch_fastp_reports)
     .collect()
+
+MULTIQC(ch_multiqc)
 
 MULTIQC(ch_multiqc)
 DOWNLOAD_REFERENCE()
