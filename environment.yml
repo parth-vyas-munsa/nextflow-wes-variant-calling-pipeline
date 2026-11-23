@@ -1,0 +1,22 @@
+
+name: wes-tools-nextflow
+
+channels:
+  - conda-forge
+  - bioconda
+
+dependencies:
+  - python=3.11
+  - openjdk=17
+  - sra-tools
+  - prefetch
+  - fasterq-dump
+  - fastqc
+  - fastp
+  - multiqc
+  - bwa-mem2
+  - samtools
+  - bcftools
+  - gatk4
+  - ensembl-vep
+  - htslib
